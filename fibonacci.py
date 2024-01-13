@@ -16,12 +16,9 @@ def fib_recur(n):
 
 fib_seq = {0: 0, 1: 1}
 def fib_fast(n):
-    if n in fib_seq:
-        return fib_seq[n]
-    else:
-        curr = fib_fast(n - 2) + fib_fast(n - 1)
-        fib_seq[n] = curr
-        return curr
+    if n not in fib_seq:
+        fib_seq[n] = fib_fast(n - 2) + fib_fast(n - 1)
+    return fib_seq[n]
 
 
 def make_fib():
