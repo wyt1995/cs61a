@@ -14,15 +14,14 @@ def fib_recur(n):
         return fib_recur(n - 2) + fib_recur(n - 1)
     
 
-def memo(f):
-    cache = {}
-    def memorized(n):
-        if n not in cache:
-            cache[n] = f(n)
-        return cache[n]
-    return memorized
-
-fib_fast = memo(fib_recur)
+fib_seq = {0: 0, 1: 1}
+def fib_fast(n):
+    if n in fib_seq:
+        return fib_seq[n]
+    else:
+        curr = fib_fast(n - 2) + fib_fast(n - 1)
+        fib_seq[n] = curr
+        return curr
 
 
 def make_fib():
