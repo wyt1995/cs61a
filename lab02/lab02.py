@@ -1,5 +1,3 @@
-import doctest
-
 def composer(f, g):
     """Return the composition function which given x, computes f(g(x)).
 
@@ -95,14 +93,10 @@ def multiple(a, b):
     42
     """
     def gcd(a, b):
-        if a <= b:
-            if a == 0:
-                return b
-            else:
-                return gcd(b-a, a)
-        else:
-            return gcd(b, a)
-    return int(a * b / gcd(a, b))
+        while a > 0:
+            a, b = min(a, b), abs(a - b)
+        return b
+    return a * b // gcd(a, b)
 
 
 def cycle(f1, f2, f3):
@@ -144,7 +138,3 @@ def cycle(f1, f2, f3):
                 return f2(f1(x))
         return h
     return g
-
-
-if __name__ == '__main__':
-    doctest.testmod()
