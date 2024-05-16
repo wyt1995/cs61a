@@ -1,0 +1,46 @@
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### VisualStudioCode ###
+.vscode/*
+
+### Autograder ###
+ok
+*.ok
+.ok_history
+.ok_storage.db
+
+### PDF files ###
+*.pdf
+
+### folders ###
+61a-slides
+demo
+discussion
+exams
+hog_2020
+hw04_2020
+lab04_2020
+lab05_2020
+lab06_2020
+lab09_2020
+lab11_2020
+lab14
